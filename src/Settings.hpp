@@ -1,5 +1,5 @@
 #ifndef SETTINGS_HPP
-#define	SETTINGS_HPP
+#define SETTINGS_HPP
 
 #include <iostream>
 #include <cstdlib>

@@ -1,5 +1,5 @@
 #ifndef MAP_MANAGER_HPP
-#define	MAP_MANAGER_HPP
+#define MAP_MANAGER_HPP
 
 #include "Settings.hpp"
 
@@ -35,5 +35,5 @@ public:
     int getWeight(int row, int col);
 };
 
-#endif	/* MAP_MANAGER_HPP */
+#endif /* MAP_MANAGER_HPP */
 

@@ -1,0 +1,7 @@
+cmake_minimum_required (VERSION 2.8)
+project (SHORTEST)
+set (CMAKE_CXX_FLAGS "-g -Wall")
+add_subdirectory (src)
+include_directories (${SHORTEST_SOURCE_DIR}/src) 
+link_directories (${SHORTEST_SOURCE_DIR}/src) 
+add_executable (shortest src/Main.cpp)

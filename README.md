@@ -17,4 +17,3 @@ Generate the Cmake files and build the application.
 	$ make
 
 ## Running
-

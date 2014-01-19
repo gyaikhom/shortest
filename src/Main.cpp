@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "MapManager.hpp"
 
 const char helpMessage[] =
         "USAGE: \n\n"
@@ -29,12 +27,26 @@ const char helpMessage[] =
         "       shortest locations.map\n\n"
         ;
 
+void runDijkstra(MapManager *map, int src, int dest) {
+}
+
+void runFloydWarshall(MapManager *map) {
+}
+
 int main(int argc, char *argv[]) {
+    MapManager map;
+    int src, dest;
+    
+    src = dest = LMARK_UNDEFINED;
+    
     if (argc == 2) {
-        // Run Floyd-Warshall algorithm
+        map.readInputFile(argv[1]);
+        runFloydWarshall(&map);
     } else if (argc == 4) {
-        // Run Dijkstra's algorithm
+        map.readInputFile(argv[1]);
+        runDijkstra(&map, src, dest);
     } else
         cout << helpMessage << endl;
+    map.print();
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "MapManager.hpp"
 #include "Dijkstra.hpp"
+#include "FloydWarshall.hpp"
 
 const char helpMessage[] =
         "USAGE: \n\n"
@@ -29,13 +30,17 @@ const char helpMessage[] =
         ;
 
 void runDijkstra(MapManager *map, int source, int destination) {
-	Dijkstra djtra;
+    Dijkstra djtra;
 
-	djtra.solve(map, source, destination);
-	djtra.displayPath(map, destination);
+    djtra.solve(map, source, destination);
+    djtra.displayPath(map, destination);
 }
 
 void runFloydWarshall(MapManager *map) {
+    FloydWarshall fw;
+
+    fw.solve(map);
+    fw.displayPaths(map);
 }
 
 int getLandmarkIndex(MapManager *map, const char *str) {

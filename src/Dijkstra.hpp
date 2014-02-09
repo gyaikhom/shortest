@@ -1,7 +1,7 @@
 #ifndef DIJKSTRA_HPP
 #define	DIJKSTRA_HPP
 
-#include "MapManager.hh"
+#include "MapManager.hpp"
 
 class Dijkstra {
 private:
@@ -17,7 +17,7 @@ private:
 public:
 	Dijkstra(void);
 	int solve(MapManager *map, int source, int destination);
-	int displayPath(MapManager *map, int source, int destination);
+	int displayPath(MapManager *map, int destination);
 };
 
 #endif	/* DIJKSTRA_HPP */

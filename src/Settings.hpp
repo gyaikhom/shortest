@@ -9,7 +9,7 @@ using namespace std;
 const unsigned int INFINITY = 999999; // Assumed value of infinity.
 const unsigned int MAX_LMARKS = 100; // Maximum number of landmarks.
 const unsigned int MAX_LMARK_NAME = 256; // Maximum length of landmark names.
-const int LMARK_UNDEFINED = -1; // Undefined landmark.
+const int UNDEFINED_LMARK = -1;
 
 /**
  * Stores information about a landmark.

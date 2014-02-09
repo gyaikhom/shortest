@@ -25,7 +25,7 @@ void MapManager::destroyLandmarkList(void) {
     }
 }
 
-int MapManager::insertLandmark(int index, char *name) {
+int MapManager::insertLandmark(int index, const char *name) {
     landmarkStructType *temp;
 
     // Is the name too long?
@@ -71,7 +71,7 @@ char *MapManager::getLandmarkName(unsigned int index) {
     return NULL; // Not found. something is wrong.
 }
 
-int MapManager::getLandmarkIndex(char *name) {
+int MapManager::getLandmarkIndex(const char *name) {
     landmarkStructType *x;
     if (strlen(name) > MAX_LMARK_NAME)
         return -1;

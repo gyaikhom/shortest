@@ -25,8 +25,8 @@ public:
 
     // Landmark linked list.
     int getNumLandmarks(void);
-    int insertLandmark(int index, char *name);
-    int getLandmarkIndex(char *name);
+    int insertLandmark(int index, const char *name);
+    int getLandmarkIndex(const char *name);
     char *getLandmarkName(unsigned int index);
     void destroyLandmarkList(void);
 

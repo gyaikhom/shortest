@@ -1,4 +1,5 @@
 #include "MapManager.hpp"
+#include "Dijkstra.hpp"
 
 const char helpMessage[] =
         "USAGE: \n\n"
@@ -27,26 +28,51 @@ const char helpMessage[] =
         "       shortest locations.map\n\n"
         ;
 
-void runDijkstra(MapManager *map, int src, int dest) {
+void runDijkstra(MapManager *map, int source, int destination) {
+	Dijkstra djtra;
+
+	djtra.solve(map, source, destination);
+	djtra.displayPath(map, destination);
 }
 
 void runFloydWarshall(MapManager *map) {
 }
 
+int getLandmarkIndex(MapManager *map, const char *str) {
+    int i, landmarkIndex;
+    bool flag = false;
+    for (i = 0; str[i] != '\0'; ++i) {
+        if (isalpha(str[i])) {
+            flag = true;
+            break;
+        }
+    }
+    if (flag == true)
+        landmarkIndex = map->getLandmarkIndex(str);
+    else
+        landmarkIndex = atoi(str);
+    return landmarkIndex;
+}
+
 int main(int argc, char *argv[]) {
     MapManager map;
-    int src, dest;
-    
-    src = dest = LMARK_UNDEFINED;
-    
+    int source, destination;
+
+    source = destination = UNDEFINED_LMARK;
+
     if (argc == 2) {
         map.readInputFile(argv[1]);
         runFloydWarshall(&map);
     } else if (argc == 4) {
         map.readInputFile(argv[1]);
-        runDijkstra(&map, src, dest);
+        source = getLandmarkIndex(&map, argv[2]);
+        destination = getLandmarkIndex(&map, argv[3]);
+        if (source == destination) {
+            cout << "Error: Source and destination must be different.\n";
+            exit(1);
+        }
+        runDijkstra(&map, source, destination);
     } else
         cout << helpMessage << endl;
-    map.print();
     return 0;
 }

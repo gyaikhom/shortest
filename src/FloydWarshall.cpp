@@ -12,8 +12,8 @@ int FloydWarshall::solve(MapManager *map) {
     numVertices = map->getNumLandmarks();
 
     // Initialise the distance and predecessor matrices.
-    for (i = 0; i < numVertices; i++)
-        for (j = 0; j < numVertices; j++) {
+    for (i = 0; i < numVertices; ++i)
+        for (j = 0; j < numVertices; ++j) {
             predecessor[i][j] = -1;
             temp = map->getWeight(i, j);
             if (temp == 0) distance[i][j] = INFINITY;

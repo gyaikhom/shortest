@@ -152,7 +152,7 @@ int MapManager::getWeight(int row, int col) {
 void MapManager::print() {
     landmarkStructType *x;
     unsigned int i, j;
-    
+
     cout << "Number of landmarks: " << numLandmarks << endl;
     cout << "List of landmarks: " << endl;
     for (x = head; x != NULL; x = x->next)

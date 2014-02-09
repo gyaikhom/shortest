@@ -28,11 +28,10 @@ int Dijkstra::solve(MapManager *map, int source, int destination) {
     int i, temp, minDistanceVertex;
     int totalDistance, tempDistance;
 
-    // Set the correct number of vertices from the graph.
     numVertices = map->getNumLandmarks();
 
     // Initialise: Assume that all choices lead to extremely long paths.
-    for (i = 0; i < numVertices; i++) {
+    for (i = 0; i < numVertices; ++i) {
         // All paths are infinitely long at the beginning of the
         // algorithm. We assume that the length of the longest path
         // possible is always less than INFINITY.
@@ -48,7 +47,7 @@ int Dijkstra::solve(MapManager *map, int source, int destination) {
     distance[source] = 0;
 
     // Initialise the 'yet to be visited' set.
-    for (i = 0; i < numVertices; i++)
+    for (i = 0; i < numVertices; ++i)
         Q.insert(i);
 
     // The main loop of the algorithm:

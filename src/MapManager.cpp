@@ -80,7 +80,7 @@ int MapManager::getLandmarkIndex(char *name) {
         if (strcmp(x->name, name) == 0)
             return x->index;
 
-    return LMARK_UNDEFINED; // Not found. something is wrong.
+    return UNDEFINED_LMARK; // Not found. something is wrong.
 }
 
 int MapManager::readInputFile(char *fname) {

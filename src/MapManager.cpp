@@ -61,14 +61,14 @@ int MapManager::insertLandmark(int index, const char *name) {
 char *MapManager::getLandmarkName(unsigned int index) {
     landmarkStructType *x;
 
-    if ((index > numLandmarks) || (index < 0))
+    if (index > numLandmarks)
         return NULL;
 
     for (x = head; x != NULL; x = x->next)
         if (x->index == index)
             return x->name;
 
-    return NULL; // Not found. something is wrong.
+    return NULL;
 }
 
 int MapManager::getLandmarkIndex(const char *name) {
